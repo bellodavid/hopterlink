@@ -1,13 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
 
 import Logo from "@/components/Logo";
-
-const Particles = dynamic(() => import("@/components/magicui/particles"), {
-  ssr: false,
-});
-
+import Particles from "@/components/magicui/particles";
 import { toast } from "@/components/ui-hooks/use-toast";
 
 import Typography from "@/components/ui/typography";
