@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import request from "@/utils/http-request";
 import { NextRequest, NextResponse } from "next/server";
 

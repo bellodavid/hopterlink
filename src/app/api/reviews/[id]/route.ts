@@ -1,3 +1,6 @@
+// Force dynamic rendering for this route
+export const dynamic = "force-dynamic";
+
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { NextResponse } from "next/server";
@@ -10,7 +13,7 @@ export async function POST(req: Request, context: { params: { id: string } }) {
 
   try {
     const reviews = await request.post(uri, {
-      // object_id:parseInt(id),
+      // object_id: parseInt(id),
       rating: body.stars,
       comment: body.content,
     });
@@ -28,8 +31,6 @@ export async function POST(req: Request, context: { params: { id: string } }) {
       // Something happened in setting up the request that triggered an Error
       errorMessage = error.message;
     }
-    // console.log("Error config:", error.config);
-
     return NextResponse.json(
       { message: errorMessage, data: errorData },
       { status: 400 } // Using 400 as it's a bad request
@@ -55,7 +56,6 @@ export async function GET(req: Request, context: { params: { id: string } }) {
     } else {
       errorMessage = error.message;
     }
-    // console.log("Error config:", error.config);
     return NextResponse.json(
       { message: errorMessage, data: errorData },
       { status: 400 } // Using 400 as it's a bad request
