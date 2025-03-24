@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Switch } from "@/components/ui/switch";
 import animationData from "@/constants/verify_email.json";
 import Stepper from "@keyvaluesystems/react-stepper";

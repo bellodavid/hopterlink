@@ -1,10 +1,12 @@
 "use client";
-export const dynamic = "force-dynamic";
+import dynamic from "next/dynamic";
 
 import Logo from "@/components/Logo";
 import PathContainer from "@/components/PathContainer";
 import SignUpForm from "@/components/SignUpForm";
-import Particles from "@/components/magicui/particles";
+const Particles = dynamic(() => import("@/components/magicui/particles"), {
+  ssr: false,
+});
 import Typography from "@/components/ui/typography";
 
 const page = () => {

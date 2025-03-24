@@ -1,8 +1,15 @@
 "use client";
+
+import dynamic from "next/dynamic";
+
 import Logo from "@/components/Logo";
-import Particles from "@/components/magicui/particles";
+
+const Particles = dynamic(() => import("@/components/magicui/particles"), {
+  ssr: false,
+});
+
 import { toast } from "@/components/ui-hooks/use-toast";
-import { Button } from "@/components/ui/button";
+
 import Typography from "@/components/ui/typography";
 import animationData from "@/constants/verified.json";
 import Stepper from "@keyvaluesystems/react-stepper";
