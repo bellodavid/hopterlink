@@ -50,6 +50,7 @@
     "avatar-initials": "^6.0.0",
     "awesome-react-stepper": "^1.1.1",
     "axios": "^1.7.3",
+    "caniuse-lite": "^1.0.30001707",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",

@@ -22,7 +22,7 @@ const CategoryCards = () => {
   };
 
   const cardVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: 30,
     },
@@ -46,7 +46,7 @@ const CategoryCards = () => {
     "from-indigo-500 to-purple-500",
     "from-pink-500 to-rose-500",
     "from-teal-500 to-cyan-500",
-    "from-amber-500 to-orange-500"
+    "from-amber-500 to-orange-500",
   ];
 
   return (
@@ -66,7 +66,10 @@ const CategoryCards = () => {
               variants={cardVariants}
               className="h-full"
             >
-              <Link href={`/categories/${category.id}`} className="h-full block">
+              <Link
+                href={`/categories/${category.id}`}
+                className="h-full block"
+              >
                 <motion.div
                   className="group relative h-[150px] rounded-xl overflow-hidden shadow-sm hover:shadow-lg 
                            transition-all duration-300 bg-gradient-to-br from-neutral-100 to-neutral-200 
@@ -74,13 +77,19 @@ const CategoryCards = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Base gradient overlay - visible by default */}
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity 
-                                 duration-300 bg-gradient-to-br ${gradients[index % gradients.length]}`} />
-                  
+                  <div
+                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity 
+                                 duration-300 bg-gradient-to-br ${
+                                   gradients[index % gradients.length]
+                                 }`}
+                  />
+
                   {/* Mesh gradient overlay for texture */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity 
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity 
                                 duration-300 bg-[radial-gradient(at_top_left,_var(--tw-gradient-stops))] 
-                                from-white via-transparent to-transparent" />
+                                from-white via-transparent to-transparent"
+                  />
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col items-center justify-center gap-4 p-4">
@@ -88,13 +97,13 @@ const CategoryCards = () => {
                       className="p-3 rounded-full bg-white/10 backdrop-blur-sm 
                                transition-colors duration-300 group-hover:text-white"
                     >
-                      <Icon 
-                        name={category.icon as string} 
+                      <Icon
+                        name={category.icon as string}
                         size={26}
                         className="transition-transform duration-300 group-hover:scale-110"
                       />
                     </motion.div>
-                    
+
                     <div className="text-center transition-colors duration-300 group-hover:text-white">
                       <Typography
                         variant="p"

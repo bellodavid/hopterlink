@@ -1,3 +1,6 @@
+// Force dynamic rendering for this route
+export const dynamic = "force-dynamic";
+
 import request from "@/utils/http-request";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -5,6 +8,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  // Construct the URI for fetching a specific category by ID
   const uri = `/api/categories/${parseInt(params.id)}`;
   try {
     const result = await request.get(uri);

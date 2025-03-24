@@ -1,6 +1,10 @@
+// Force dynamic rendering for this route
+export const dynamic = "force-dynamic";
+
 import request from "@/utils/http-request";
 import { NextRequest, NextResponse } from "next/server";
 
+// API route handler for GET and PATCH requests on a specific business
 export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
@@ -12,7 +16,6 @@ export async function GET(
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.error("Error fetching business:", error);
-
     // Return a cleaner error response
     return NextResponse.json(
       {
@@ -31,13 +34,11 @@ export async function PATCH(
   const uri = `/api/businesses/${parseInt(params.id)}/`;
   try {
     const data = await req.formData();
-
     const result = await request.patch(uri, data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-
     const response = result.data;
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
