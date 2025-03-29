@@ -68,7 +68,7 @@ export default function PasswordReset({ uid, token }: Props) {
         new_password2: data.new_password2,
       };
       const response = await axios.post(
-        "/api/confirm-password-reset/",
+        "/api/reset/confirm/",
         JSON.stringify(payload)
       );
 
